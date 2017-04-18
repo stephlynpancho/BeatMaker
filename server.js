@@ -12,5 +12,5 @@ app.set('/', function (req, res){
 	res.send("<h1> Hello World </h1>");
 })
 app.listen(app.get('port'), function(){
- console.log("listening on http://localhost:2020/ ", app.get('port'));
+ console.log("listening on http://localhost: ", app.get('port'));
 });
