@@ -1,0 +1,59 @@
+<div class='background2' ng-controller = 'MainController'>
+	<nav>
+		<div class = 'nav-wrapper red lighten-2'>
+			<p ng-if='clicked' class='notice'> Click on a sound to grab it, then click on a note to assign the sound to it!</p>
+		</div>
+		<a class="waves-effect waves-light btn modal-trigger red lighten-2" href="#modal1" modal>Info</a>
+	</nav>
+	<div id='instruments'>
+		<div class='sidehead'>
+				<p>Controls</p>
+			</div>
+		<div class='instrumentModule'>
+			<p class='range-field'>
+			Volume: {{volume}} % <input type="range" min="0" max="100" ng-change="updateVolume(volume)" ng-model="volume" class="ng-valid ng-dirty">
+			</p>
+			<p class= 'range-field' ng-init='50'>
+			Tempo: {{tempo}} bpm<input type="range" min="65" max="160" ng-change="updateTempo()" ng-model="tempo" class="ng-valid ng-dirty">
+			</p>
+		</div>
+		<div class='instrumentButtons'>
+			<div id="button" class="btn btn-small waves-effect waves-light red lighten-2" ng-click='sound("kick")'>Kick<div style="background-color: #dce775" id='tab'></div></div>
+			<div id="button" class="btn btn-small waves-effect waves-light red lighten-2" ng-click='sound("high_tom")'>H Tom<div style="background-color: #009688" id='tab'></div></div>
+			<div id="button" class="btn btn-small waves-effect waves-light red lighten-2" ng-click='sound("low_tom")'>L Tom<div style="background-color: #ef6c00" id='tab'></div></div>
+			<div id="button" class="btn btn-small waves-effect waves-light red lighten-2" ng-click='sound("snare")'>Snare<div style="background-color: #673ab7" id='tab'></div></div>
+			<div id="button" class="btn btn-small waves-effect waves-light red lighten-2" ng-click='sound("clap")'>Clap<div style="background-color: #ffebee" id='tab'></div></div>
+			<div id="button" class="btn btn-small waves-effect waves-light red lighten-2" ng-click='sound("hi_hat")'>Hi Hat<div style="background-color: #c2185b" id='tab'></div></div>
+		</div>
+	</div>
+	<div id='sequencer'>
+		<div ng-repeat = 'visual in visualizations track by $index' ng-if = '$index + 1 < 17'  id='node' class='cyan lighten-1 waves-effect waves' ng-click='assign($index + 1)'>
+			<div class='head' ng-class="{head_notSelect: currentBeat != '{{$index + 1}}', head_selected: currentBeat == '{{$index + 1}}'}"><p>{{$index + 1}}</p></div>
+			<div ng-repeat= "visual in visualizations[$index + 1]" class = 'tracker' ng-class="{kick_tracker: visual == 'kick', hTom_tracker: visual == 'high_tom', lTom_tracker: visual == 'low_tom', snare_tracker: visual == 'snare', clap_tracker: visual == 'clap', hat_tracker: visual == 'hi_hat'}"></div>
+		</div>
+	</div>
+	<div id='sequencer' ng-if = 'bars > 16'>
+		<div ng-repeat = 'visual in visualizations track by $index' ng-if = '$index + 1 > 16 && $index + 1 < 33' id='node' class='cyan lighten-1 waves-effect waves' ng-click='assign($index + 1)'>
+			<div class='head' ng-class="{head_notSelect: currentBeat != '{{$index + 1}}', head_selected: currentBeat == '{{$index + 1}}'}"><p>{{$index + 1}}</p></div>
+			<div ng-repeat= "visual in visualizations[$index + 1]" class = 'tracker' ng-class="{kick_tracker: visual == 'kick', hTom_tracker: visual == 'high_tom', lTom_tracker: visual == 'low_tom', snare_tracker: visual == 'snare', clap_tracker: visual == 'clap', hat_tracker: visual == 'hi_hat'}"></div>
+		</div>
+	</div>
+	<div id='sequencer' ng-if = 'bars > 32'>
+		<div ng-repeat = 'visual in visualizations track by $index' ng-if = '$index + 1 > 32'  id='node' class='cyan lighten-1 waves-effect waves' ng-click='assign($index + 1)'>
+			<div class='head' ng-class="{head_notSelect: currentBeat != '{{$index + 1}}', head_selected: currentBeat == '{{$index + 1}}'}"><p>{{$index + 1}}</p></div>
+			<div ng-repeat= "visual in visualizations[$index + 1]" class = 'tracker' ng-class="{kick_tracker: visual == 'kick', hTom_tracker: visual == 'high_tom', lTom_tracker: visual == 'low_tom', snare_tracker: visual == 'snare', clap_tracker: visual == 'clap', hat_tracker: visual == 'hi_hat'}"></div>
+		</div>
+	</div>
+	<div id = 'controls'>
+		<button class='btn cyan lighten-1' ng-click='play()'>Play</button><button class='btn cyan lighten-1' ng-click ='stop()'>Stop</button><button class='btn cyan lighten-1' ng-click ='clear()'>Clear Sequence</button><button class='btn cyan lighten-1' ng-click ='addBar()'>Add Sequence</button>
+	</div>
+	<p style='color:red; float:right; margin-right:45px; margin-top:10px;' ng-bind="error"></p>
+	<div id="modal1" class="modal">
+    	<div class="modal-content">
+      		<h4>BeatMaker</h4>
+     		<p>Create music by clicking a sound to a beat box in a sequence, and repeat for other music sequence.
+Built with Node, Angular, and Materialize.</p>
+    	</div>
+  	</div>
+  	<p style='font-size:9pt; left: 88.5%; top:97%; position:fixed;'>Created by Stephanie Pancho</p>
+</div>

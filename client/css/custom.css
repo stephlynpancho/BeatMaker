@@ -1,0 +1,181 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+p{
+	margin: 0;
+}
+a{
+	display: inline-block;
+	position: absolute;
+	margin-top: 10px;
+	margin-right: 45px;
+	float: right;
+}
+button{
+	margin-left: 55px;
+	margin-top: 10px;
+}
+.notice{
+	color:white;
+	font-size: 16pt;
+	margin-left: 50px;
+}
+	.notice.ng-leave {
+		transition: 0.75s linear all;
+		opacity: 1;
+	}
+	.notice.ng-leave.ng-leave-active{
+		opacity: 0;
+	}
+#controls{
+	display: block;
+}
+.launchPage{
+	background: url('/img/launch_page.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 70%;
+	min-height: 100vh;
+}
+	.background{
+		background: #e57373;
+		background-size: cover;
+		min-height: 100vh;
+	}
+	.background2{
+		background: #fff8e1;
+		background-size: cover;
+		min-height: 100vh;
+	}
+#sequencer{
+	display:block;
+	width: 1111px;
+	margin-top: 50px;
+	margin-left: 50px;
+	background-color: white;
+	padding:5px 2px 5px 5px;
+	box-shadow: 0px 4px 5px -3px rgba(0,0,0,0.75);
+}
+	#node{
+		display: inline-block;
+		height: 120px;
+		width: 66px;
+		box-shadow: 0px 4px 5px -3px rgba(0,0,0,0.75);
+		margin-right: 3px;
+	}
+	.tracker{
+		margin-top: 4px;
+	}
+	.kick_tracker{
+		margin-top: 2px;
+		display: block;
+		height:5px;
+		width: 30px;
+		background-color: #dce775;
+	}
+	.hTom_tracker{
+		margin-top: 2px;
+		display: block;
+		height:5px;
+		width: 30px;
+		background-color: #009688;
+	}
+	.lTom_tracker{
+		margin-top: 2px;
+		display: block;
+		height:5px;
+		width: 30px;
+		background-color: #ef6c00;
+	}
+	.snare_tracker{
+		margin-top: 2px;
+		display: block;
+		height:5px;
+		width: 30px;
+		background-color: #673ab7;
+	}
+	.clap_tracker{
+		margin-top: 2px;
+		display: block;
+		height:5px;
+		width: 30px;
+		background-color: #ffebee;
+	}
+	.hat_tracker{
+		margin-top: 2px;
+		display: block;
+		height:5px;
+		width: 30px;
+		background-color: #c2185b;
+	}
+		.head{
+			height:20px;
+			width:auto;
+			background: #009CAB;
+		}
+		.head_notSelect{
+			color:white;
+		}
+		.head_selected{
+			color:red;
+		}
+			.head p{
+				display: inline-block;
+				margin-left: 5px;
+			}
+
+#instruments{
+	display: block;
+	margin-left: 50px;
+	margin-top: 50px;
+	width: 545px;
+	background-color: white;
+	box-shadow: 0px 4px 5px -3px rgba(0,0,0,0.75);
+}
+	.instrumentModule{
+		vertical-align: top;
+		display:inline-block;
+		height: 125px;
+		width:250px;
+		margin-top: 10px;
+	}
+	.instrumentButtons{
+		vertical-align: top;
+		display:inline-block;
+		height: 100px;
+		width:280px;
+		margin: 10px 0px 0px 10px;
+	}
+		.instrumentButtons p{
+			margin-left: 5px;
+		}
+		.instrumentButtons #tab{
+			float: right;
+			height: 36px;
+			margin-left: 10px;
+			width:5px;
+		}
+		.instrumentButtons #button{
+			padding-right:  0px;
+			padding-left: 15px;
+			margin:0px 0px 10px 5px;
+			display: inline-block;
+		}
+		.instrumentModule p.range-field{
+			display: inline-block;
+			margin-left: 20px;
+		}
+	.sidehead{
+			height:30px;
+			margin-bottom: 5px;
+			width:auto;
+			background: #009CAB;
+		}
+		.sidehead p{
+			color:white;
+			margin-left: 20px;
+			font-size: 16pt;
+			/*text-align: center;*/
+		}
